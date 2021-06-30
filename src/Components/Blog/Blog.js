@@ -11,7 +11,7 @@ const Blog = ({blog}) => {
                 </Link>
                 <span className="postDate">{blog.date}</span> <br />
                 <span className="text-muted text-center">{blog.author}</span>
-                <p className="postDesc">{blog.description.substr(0, 140)+'...'}</p>
+                <p className="postDesc">{blog.description.substr(0, 240)+'...'}</p>
             </div>
     );
 };

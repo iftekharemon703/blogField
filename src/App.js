@@ -23,11 +23,9 @@ function App() {
           <Hero></Hero>
           <Home></Home>
         </Route>
-        
         <Route path="/blog/:id">
           <BlogDetails></BlogDetails>
         </Route>
-
         <PrivateRoute path="/dashboard">
           <DashBoard></DashBoard>
         </PrivateRoute>

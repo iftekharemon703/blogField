@@ -7,13 +7,13 @@ const BlogDetails = () => {
     const { id } = useParams()
     const [blog, setBlog] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/blog/${id}`)
+        fetch(`https://glacial-savannah-08558.herokuapp.com//blog/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data)
             })
     }, [id])
-    console.log(id);
+
     return (
         <div className="container">
             <div className="row mt-5">
