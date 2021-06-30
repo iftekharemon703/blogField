@@ -7,13 +7,13 @@ const ManageBlog = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://glacial-savannah-08558.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => setBlogs(data))
     }, [])
 
     const handleDelete = ((id) => {
-        fetch(`http://localhost:5000/deleteBlog/${id}`,{
+        fetch(`https://glacial-savannah-08558.herokuapp.com/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

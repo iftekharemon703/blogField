@@ -7,7 +7,7 @@ const BlogDetails = () => {
     const { id } = useParams()
     const [blog, setBlog] = useState({})
     useEffect(() => {
-        fetch(`https://glacial-savannah-08558.herokuapp.com//blog/${id}`)
+        fetch(`https://glacial-savannah-08558.herokuapp.com/blog/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data)
