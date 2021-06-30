@@ -1,0 +1,17 @@
+.left-sidebar{
+    background-color: #F8F9FA;
+    position: fixed;
+}
+.left-sidebar li{
+    margin-bottom: 2em;
+}
+.left-sidebar li a {
+    text-decoration: none;
+}
+.left-sidebar li:hover span{
+    display: inline-block;
+    transform: translate(5px);
+}
+.left-sidebar svg{
+    margin-right: 5px;
+}

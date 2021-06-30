@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import blogData from '../../../fakeData/fakeData';
 import Sidebar from '../../Sidebar/Sidebar';
 
 
 const BlogDetails = () => {
-    const {id} = useParams();
-    const currentBlog = blogData.find(blog => blog.id === Number(id));
-    
+    const { id } = useParams()
+    const [blog, setBlog] = useState({})
+    useEffect(() => {
+        fetch(`http://localhost:5000/blog/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setBlog(data)
+            })
+    }, [id])
+    console.log(id);
     return (
         <div className="container">
             <div className="row mt-5">
                 <div className="col-md-9 text-center">
-                    <img src={currentBlog.img} alt="" />
-                    <h2>{currentBlog.title}</h2>
-                    <span>{currentBlog.date}</span>
-                    <p>{currentBlog.description}</p>
+                    <img src={blog.image} alt="" />
+                    <h2>{blog.title}</h2>
+                    <span>{blog.date}</span>
+                    <p>{blog.description}</p>
                 </div>
                 <div className="col-md-3">
                     <Sidebar></Sidebar>
